@@ -1,18 +1,18 @@
 /* eslint-disable */
 <template>
-  <!-- eslint-disable-next-line -->
-  <SubmitForm @newPerson="msg => ceva.value = msg" />
-  <p>{{ ceva }}</p>
+  <SubmitForm @newPerson="insertPerson" />
   <DemoGrid :data="gridData" :columns="gridColumns" />
 </template>
 
 <script setup>
 import SubmitForm from './components/SubmitForm.vue'
 import DemoGrid from './components/GridView.vue'
-
 import { ref } from 'vue'
-const ceva = ref('test')
-const gridColumns = ['Nume', 'Prenume', 'DataNasterii']
+
+function insertPerson(lastName, firstName, birthDate) {
+  gridData.value.push({ Nume: lastName, Prenume: firstName, 'Data Nasterii': birthDate })
+}
+const gridColumns = ['Nume', 'Prenume', 'Data Nasterii']
 const gridData = ref([])
 </script>
 

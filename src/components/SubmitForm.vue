@@ -31,10 +31,15 @@ const emit = defineEmits(['newPerson'])
 
 
 function addPerson() {
-  emit('newPerson', firstName.value + " " + lastName.value + " " + birthDate.value)
-  firstName.value = ''
-  lastName.value = ''
-  birthDate.value = ''
+  if (firstName.value !== '' && lastName.value !== '' && birthDate.value !== '') {
+    emit('newPerson', firstName.value, lastName.value, birthDate.value)
+    firstName.value = ''
+    lastName.value = ''
+    birthDate.value = ''
+  }
+  else {
+    alert('Introdu toate datele!')
+  }
 }
 </script>
 
@@ -43,7 +48,7 @@ function addPerson() {
 #data .dataForm {
 
   width: "85vw";
-  padding: 10em;
+  padding: 3em;
 
 }
 </style>
