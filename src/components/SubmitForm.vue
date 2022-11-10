@@ -26,16 +26,15 @@ const lastName = ref('')
 const firstName = ref('')
 const birthDate = ref('')
 // eslint-disable-next-line
-const emit = defineEmits(['test'])
+const emit = defineEmits(['newPerson'])
 
 
 
 function addPerson() {
-  emit('test', firstName.value + " " + lastName.value + " " + birthDate.value)
+  emit('newPerson', firstName.value + " " + lastName.value + " " + birthDate.value)
   firstName.value = ''
   lastName.value = ''
   birthDate.value = ''
-
 }
 </script>
 
