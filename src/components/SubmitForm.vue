@@ -24,7 +24,7 @@
 import { ref } from 'vue'
 const lastName = ref('')
 const firstName = ref('')
-const birthDate = ref('')
+const birthDate = ref(Date(0))
 // eslint-disable-next-line
 const emit = defineEmits(['newPerson'])
 
